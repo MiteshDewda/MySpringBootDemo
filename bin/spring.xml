@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:aop="http://www.springframework.org/schema/aop"
+	   xsi:schemaLocation="http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd"
+		>
+
+<aop:aspectj-autoproxy />
+
+<bean name="triangle" class="org.mitesh.aopdemo.model.Triangle">
+    <property name="name" value="Triangle Name" />
+</bean>
+
+<bean name="circle" class="org.mitesh.aopdemo.model.Circle">
+    <property name="name" value="Circle Name" />
+</bean>
+
+<bean name="shapeService" class="org.mitesh.aopdemo.service.ShapeService" autowire="byName"/>
+
+<bean name="loggingAspect" class="org.mitesh.aopdemo.aspect.LoggingAspect" />
+
+</beans>
